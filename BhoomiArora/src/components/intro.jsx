@@ -29,7 +29,7 @@ const Intro = () => {
     <div className="flex flex-col items-center justify-center space-y-4 transition-all duration-700 ease-in-out group-hover:-translate-x-10">
       <img
         className="h-80 w-80 rounded-full object-cover shadow-lg transition-transform duration-700"
-        src="navya.jpeg"
+        src="nav5.jpg"
         alt="Navya"
       />
       <h1 className="text-5xl md:text-6xl font-light text-white/90 tracking-wider mt-4">
@@ -47,14 +47,7 @@ Aspiring Full-Stack Developer | Frontend Specialist | Java DSA Learner <br/>
 Currently building real-world projects while mastering data structures through Java.
       </p>
 
-      <div className="flex flex-col sm:flex-row gap-6">
-        <button className="px-8 py-3 border border-slate-500/30 text-slate-300 hover:bg-slate-800/30 transition-all duration-300 tracking-wide">
-          View Work
-        </button>
-        <button className="px-8 py-3 bg-slate-800/40 text-white hover:bg-slate-700/50 transition-all duration-300 tracking-wide">
-          Get in Touch
-        </button>
-      </div>
+      
     </div>
   </div>
 </div>

@@ -1,11 +1,12 @@
 import { FaHtml5, FaCss3Alt, FaReact, FaPhp, FaGitAlt, FaGithub } from "react-icons/fa";
-import { SiTailwindcss, SiJavascript, SiFigma, SiMysql } from "react-icons/si";
+import { SiTailwindcss, SiJavascript, SiFigma, SiMysql, SiRedux } from "react-icons/si";
 
 const skills = [
   { name: "HTML", icon: <FaHtml5 className="text-orange-500 text-3xl" /> },
   { name: "CSS", icon: <FaCss3Alt className="text-blue-500 text-3xl" /> },
   { name: "JavaScript", icon: <SiJavascript className="text-yellow-400 text-3xl" /> },
   { name: "React", icon: <FaReact className="text-cyan-400 text-3xl" /> },
+  { name: "Redux", icon: <SiRedux className="text-[#764abc] text-3xl" /> },
   { name: "Tailwind", icon: <SiTailwindcss className="text-sky-400 text-3xl" /> },
   { name: "MySQL", icon: <SiMysql className="text-blue-500 text-3xl" /> },
   { name: "PHP", icon: <FaPhp className="text-indigo-500 text-3xl" /> },

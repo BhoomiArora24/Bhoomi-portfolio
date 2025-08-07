@@ -11,6 +11,12 @@ const navLinks = [
     name: "Skills",
     link: "#skills",
   },
+  {
+    name: "My Resume",
+    link:"\BHOOMI RESUME.docx (1).pdf",
+    external: true,
+    
+  }
 ];
 
 const expCards = [
@@ -19,7 +25,7 @@ const expCards = [
     imgPath: "name.png",
     logoPath: "logo.png",
     title: "Frontend Developer",
-    date: "January 2023 - Present",
+    date: "February 2025 - August 2025",
     responsibilities: [
       "Developed a responsive front-end UI embedded in a PHP project using HTML, CSS, and JavaScript.",
       " Developed a dynamic web page to display relational data using SQL JOINs and implemented full CRUD operations with PHP.",

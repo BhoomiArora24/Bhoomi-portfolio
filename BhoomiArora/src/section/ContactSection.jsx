@@ -37,7 +37,7 @@ const ContactSection = () => {
             <div className="flex items-start gap-4">
               <FaEnvelope className="text-primary w-6 h-6" />
               <div>
-                <h4 className="font-medium">Email</h4>
+                <h4 className="font-medium">MyEmail</h4>
                 <a
                   href="mailto:youremail@gmail.com"
                   className="text-muted-foreground hover:text-primary transition"
@@ -48,39 +48,10 @@ const ContactSection = () => {
             </div>
 
             {/* Socials */}
-            <div className="pt-8">
-              <h4 className="font-medium mb-4">Connect with me</h4>
-              <div className="flex gap-4">
-  <a
-    href="https://www.linkedin.com/in/bhoomi-arora-45aa24292/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="LinkedIn"
-  >
-    <FaLinkedin className="hover:text-primary cursor-pointer text-2xl" />
-  </a>
-
-  <a
-    href="https://www.instagram.com/its_navyaarora/?next=%2F"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Instagram"
-  >
-    <FaInstagram className="hover:text-primary cursor-pointer text-2xl" />
-  </a>
-
-  <a
-    href="https://github.com/BhoomiArora24"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="GitHub"
-  >
-    <FaGithub className="hover:text-primary cursor-pointer text-2xl" />
-  </a>
-</div>
+            
 
 
-            </div>
+            
           </div>
 
           {/* Contact Form */}

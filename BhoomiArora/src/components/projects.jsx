@@ -14,7 +14,7 @@ const AnimatedCard = ({ imgSrc, title, link }) => {
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 1.2, ease: 'easeOut' }}
     >
-      <div className="rounded-lg">
+      <div id="work" className="rounded-lg">
         <img className="w-130" src={imgSrc} alt={title} />
         <div className="flex items-center justify-between">
           <h1 className="text-white text-xl mt-4">{title}</h1>
