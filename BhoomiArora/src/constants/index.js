@@ -13,7 +13,7 @@ const navLinks = [
   },
   {
     name: "My Resume",
-    link: "/BHOOMI RESUME.pdf",
+    link: "BHOOMI RESUME.docx.pdf",
     external: true,
   }
 ];
