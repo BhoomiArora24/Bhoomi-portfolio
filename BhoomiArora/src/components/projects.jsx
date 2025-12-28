@@ -38,11 +38,11 @@ const Projects = () => {
         title="Smart Farming E-commerce Website"
         link="http://farmpractice.free.nf"
       />
-      <AnimatedCard
+      {/* <AnimatedCard
         imgSrc="taskify.png"
         title="Task Management Application"
         link="http://Taskify.free.nf"
-      />
+      /> */}
       <AnimatedCard
         imgSrc="blogspace.png"
         title="Blogging Web Application"
