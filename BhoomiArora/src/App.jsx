@@ -12,6 +12,8 @@ import Experience from "./section/expSection"
 import Skills from './section/SkillSection'
 import Contact from './section/ContactSection'
 import Showcase from './section/ShowcaseSection'
+import FreelanceAstrologySection from './components/Freelance'
+
 
 
 
@@ -26,6 +28,7 @@ function App() {
         <Navbar/>
         <Intro/>
         <Projects/>
+        <FreelanceAstrologySection/>
         <Experience />
         <Skills />
         <Showcase />

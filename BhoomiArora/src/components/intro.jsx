@@ -5,7 +5,8 @@ const Intro = () => {
   return (
     <div>
       {/* Background Dots */}
-      <div className="absolute inset-0 opacity-40">
+      <div className="absolute inset-0 opacity-40 pointer-events-none">
+
         {Array.from({ length: 20 }).map((_, i) => (
           <div
             key={i}
