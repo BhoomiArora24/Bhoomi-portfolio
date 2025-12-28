@@ -1,6 +1,5 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import Background from './background'
 import Button from './button'
 
 const AnimatedCard = ({ imgSrc, title, link }) => {
@@ -13,13 +12,22 @@ const AnimatedCard = ({ imgSrc, title, link }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 1.2, ease: 'easeOut' }}
+      className="w-full"
     >
-      <div id="work" className="rounded-lg">
-        <img className="w-130" src={imgSrc} alt={title} />
-        <div className="flex items-center justify-between">
-          <h1 className="text-white text-xl mt-4">{title}</h1>
+      <div id="work" className="rounded-lg w-full">
+        <img
+          className="w-full h-auto rounded-md object-cover"
+          src={imgSrc}
+          alt={title}
+        />
+
+        <div className="mt-4">
+          <h1 className="text-white text-lg md:text-xl font-semibold">
+            {title}
+          </h1>
+
           <Button
-            className="md:w-24 md:h-12 w-20 h-10 mt-4 mr-31"
+            className="w-28 h-10 md:w-32 md:h-12 mt-3"
             id="button"
             text="See my Work"
             link={link}
@@ -30,19 +38,17 @@ const AnimatedCard = ({ imgSrc, title, link }) => {
   )
 }
 
+
+
 const Projects = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 ml-45 mr-45 mt-10">
-      <AnimatedCard 
-        imgSrc="farmiz.png" className='h-180'
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-4 sm:px-10 md:px-20 lg:px-32 xl:px-40 mt-10">
+      <AnimatedCard
+        imgSrc="farmiz.png"
         title="Smart Farming E-commerce Website"
         link="http://farmpractice.free.nf"
       />
-      {/* <AnimatedCard
-        imgSrc="taskify.png"
-        title="Task Management Application"
-        link="http://Taskify.free.nf"
-      /> */}
+
       <AnimatedCard
         imgSrc="blogspace.png"
         title="Blogging Web Application"
