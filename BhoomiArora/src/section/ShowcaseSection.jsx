@@ -10,12 +10,7 @@ import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 gsap.registerPlugin(ScrollTrigger);
 
 const appShowcaseData = [
-  {
-    title: "Twitter",
-    link: "https://x.com/Bhoomi2424",
-    iconName: "FaTwitter",
-    bgColor: "bg-[#FFEFDB]",
-  },
+  
   {
     title: "LinkedIn",
     link: "https://www.linkedin.com/in/bhoomi-arora-45aa24292/",
@@ -71,7 +66,7 @@ const AppShowcase = () => {
       <div className="max-w-5xl mx-auto px-4">
         <TitleHeader sub="💼 Find me Online" />
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10">
+        <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-8 mt-10">
           {appShowcaseData.map((item, idx) => {
             const Icon = ICONS[item.iconName];
             return (
