@@ -89,7 +89,7 @@ const Hero = () => {
 
             <div className="flex gap-5 pt-4">
               <a
-                href="Bhoomi Resume.pdf"
+                href="BhoomiResume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-violet-400 text-black px-7 py-3 rounded-full font-semibold hover:bg-violet-200 transition inline-flex items-center justify-center"
@@ -98,8 +98,8 @@ const Hero = () => {
               </a>
 
               <a
-                href="Bhoomi Resume.pdf"
-                download="Bhoomi Resume.pdf"
+                href="BhoomiResume.pdf"
+                download="BhoomiResume.pdf"
                 className="border border-violet-300 text-violet-300 px-7 py-3 rounded-full hover:bg-violet-400 hover:text-black font-semibold transition inline-flex items-center justify-center"
               >
                 Download Resume
