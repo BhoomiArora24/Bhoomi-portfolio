@@ -6,11 +6,11 @@ const skills = [
     title: "Frontend",
     items: [
       { name: "React", level: "Comfortable" },
-      { name: "Next.js", level: "Core" },
+      // { name: "Next.js", level: "Core" },
       { name: "JavaScript", level: "Core" },
-      { name: "TypeScript", level: "Learning" },
+      // { name: "TypeScript", level: "Learning" },
       { name: "Tailwind CSS", level: "Core" },
-      { name: "Framer Motion", level: "Comfortable" },
+      // { name: "Framer Motion", level: "Comfortable" },
       { name: "Redux Toolkit", level: "Learning" },
     ],
   },
@@ -19,8 +19,8 @@ const skills = [
     items: [
       { name: "Node.js", level: "Comfortable" },
       { name: "Express.js", level: "Comfortable" },
-      { name: "Java", level: "Core" },
-      { name: "Spring Boot", level: "Learning" },
+      // { name: "Java", level: "Core" },
+      // { name: "Spring Boot", level: "Learning" },
       { name: "REST APIs", level: "Comfortable" },
     ],
   },
@@ -29,7 +29,7 @@ const skills = [
     items: [
       { name: "MongoDB", level: "Comfortable" },
       { name: "MySQL", level: "Core" },
-      { name: "Firebase", level: "Learning" },
+      // { name: "Firebase", level: "Learning" },
     ],
   },
   {
@@ -40,7 +40,7 @@ const skills = [
       { name: "VS Code", level: "Core" },
       { name: "Postman", level: "Comfortable" },
       { name: "Figma", level: "Comfortable" },
-      { name: "Docker", level: "Learning" },
+      // { name: "Docker", level: "Learning" },
     ],
   },
 ];
