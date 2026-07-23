@@ -1,45 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { useEffect } from "react";
+import Lenis from "lenis";
 
-import './App.css'
-import Background from './components/background'
-import { motion } from "framer-motion"
-import Intro from './components/intro'
-import Projects from './components/Projects'
-import Button from './components/button'
-import Navbar from './components/NavBar'
-import Experience from "./section/expSection"
-import Skills from './section/SkillSection'
-import Contact from './section/ContactSection'
-import Showcase from './section/ShowcaseSection'
-import FreelanceAstrologySection from './components/Freelance'
-
-
-
+import "./App.css";
+import Intro from "./components/intro";
+import Projects from "./components/Projects";
+import AboutMe from "./components/AboutMe"
+import Skills from "./components/Skills";
+import Experience from "./components/expSection";
+import Contact from "./components/ContactSection";
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.3,
+      smoothWheel: true,
+      smoothTouch: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => lenis.destroy();
+  }, []);
 
   return (
-    <>
-    <div  className="relative">
-      <Background/>
-      <main className="relative z-10">
-        <Navbar/>
-        <Intro/>
-        <Projects/>
-        <FreelanceAstrologySection/>
-        <Experience />
-        <Skills />
-        <Showcase />
-        <Contact />
-        
-        
-      </main>
-      
-      </div>
-    </>
-  )
+    <main className="bg-black">
+      <Intro />
+      <AboutMe />
+      <Projects />
+      <Experience />
+      <Skills />
+      <Contact />
+    </main>
+  );
 }
 
-export default App
+export default App;

@@ -1,142 +1,104 @@
-// import React, { useRef } from 'react'
-// import { motion, useInView } from 'framer-motion'
-// import Button from './button'
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// const AnimatedCard = ({ imgSrc, title, link }) => {
-//   const ref = useRef(null)
-//   const isInView = useInView(ref, { once: false, margin: '-100px' })
+import ProjectCard from "./ProjectCard";
+import { projects } from "../data/projects";
 
-//   return (
-//     <motion.div
-//       ref={ref}
-//       initial={{ opacity: 0, y: 50 }}
-//       animate={isInView ? { opacity: 1, y: 0 } : {}}
-//       transition={{ duration: 1.2, ease: 'easeOut' }}
-//       className="w-full"
-//     >
-//       <div id="work" className="rounded-lg w-full">
-//         <img
-//           className="w-full h-auto rounded-md object-cover"
-//           src={imgSrc}
-//           alt={title}
-//         />
+gsap.registerPlugin(ScrollTrigger);
 
-//         <div className="mt-4">
-//           <h1 className="text-white text-lg md:text-xl font-semibold">
-//             {title}
-//           </h1>
+export default function Projects() {
+  const sectionRef = useRef(null);
+  const cardsRef = useRef([]);
 
-//           <Button
-//             className="w-28 h-10 md:w-32 md:h-12 mt-3"
-//             id="button"
-//             text="See my Work"
-//             link={link}
-//           />
-//         </div>
-//       </div>
-//     </motion.div>
-//   )
-// }
+  useLayoutEffect(() => {
+    cardsRef.current = cardsRef.current.filter(Boolean);
 
+    // Place every card except the first below the screen
+    gsap.set(cardsRef.current.slice(1), {
+      yPercent: 100,
+    });
 
+    const scrollPerCard = 180; // Adjust as needed
 
-// const Projects = () => {
-//   return (
-//     <div className="w-full flex justify-center mt-10 px-4">
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top top",
+        end: `+=${projects.length * scrollPerCard}%`,
+        pin: true,
+        scrub: 1,
+        anticipatePin: 1,
+      },
+    });
 
-//       <div className="grid grid-cols-1 gap-10 w-full max-w-3xl">
+    cardsRef.current.forEach((card, index) => {
+      if (index === 0) return;
 
-//         <AnimatedCard
-//           imgSrc="greenest.png"
-//           title="Smart Farming E-commerce Website"
-//           link="https://nursery-project-frontend.vercel.app/"
-//         />
+      tl.to(
+        card,
+        {
+          yPercent: 0,
+          duration: 1,
+          ease: "none",
+        },
+        index
+      );
+    });
 
-//         {/* <AnimatedCard
-//           imgSrc="blogspace.png"
-//           title="Blogging Web Application"
-//           link="https://BhoomiArora24.github.io/blogwebsite"
-//         /> */}
+    return () => {
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+    };
+  }, []);
 
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Projects
-
-const FreelanceAstrologySection = () => {
   return (
-    <section className="mx-auto">
-      <div className="flex flex-col md:flex-row items-center  mt-40 gap-10 py-10 mx-20">
-        {/* Left Image */}
-        <div className="w-full md:w-[500px]">
-          <img
-            src="greenest.png"
-            alt="E-commerce Project"
-            className="w-full h-auto object-cover border-4 border-black"
-          />
 
-          <a
-            href="https://nursery-project-frontend.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-block px-6 py-2 font-medium border-2 border-black hover:bg-black hover:text-white transition duration-200"
+    <div>
+    <div className="bg-black pt-20 md:pt-28 lg:pt-22 pb-10">
+      <h1 className="text-center font-['Bebas_Neue'] uppercase leading-[0.8]">
+        <span
+          className="
+            block
+            text-violet-400
+            text-6xl
+            sm:text-7xl
+            md:text-8xl
+            lg:text-9xl
+            xl:text-[10rem]
+            tracking-[-0.03em]
+          "
+        >
+          Projects
+        </span>
+      </h1>
+    </div>
+
+    <section
+      ref={sectionRef}
+      className=" relative min-h-screen bg-black overflow-hidden"
+    >
+
+      <div className="flex justify-center ">
+</div>
+      <div className="relative w-full h-full max-w-7xl mx-auto pt-8 md:pt-16">
+
+        {projects.map((project, index) => (
+          <div
+            key={project.id}
+            ref={(el) => (cardsRef.current[index] = el)}
+            className="absolute inset-0 flex items-start justify-center px-4 py-6 md:p-8"
+            style={{
+              zIndex: index + 1,
+              top: window.innerWidth < 768 ? `${index * 20}px` : `${index * 40}px`,
+              transform: `scale(${1 - index * 0.02})`,
+            }}
           >
-            View Project →
-          </a>
-        </div>
+            <ProjectCard project={project} />
+          </div>
+        ))}
 
-
-        {/* Right Content */}
-        <div className="flex-1">
-          <h2 className="text-3xl md:text-4xl font-extrabold leading-tight">
-            E-COMMERCE
-            <br />PROJECT
-          </h2>
-
-          <ul className="list-disc ml-5 mt-4 space-y-2 text-[15px] leading-relaxed">
-            <li>
-              Developed a full-stack nursery e-commerce platform with separate Admin Panel and Client Portal managing 100+
-              products, users, and order workflows.
-            </li>
-            <li>
-              Implemented core e-commerce functionalities including authentication, cart, wishlist, reviews, ratings, and order
-              management systems.
-            </li>
-            <li>
-              Built dynamic admin modules for inventory handling, category management, user moderation, and review approval
-              workflows.
-            </li>
-            <li>
-              Integrated real-time notifications and chatbot support features, improving customer engagement and user
-              interaction.
-            </li>
-            <li>
-              Developed a scalable Admin Panel for managing products, categories,
-              inventory, customer orders, seller profiles, and user inquiries within
-              the e-commerce platform.
-            </li>
-
-            <li>
-              Implemented complete CRUD operations for product listings, order
-              management, and seller dashboards with optimized database structure for
-              efficient data handling.
-            </li>
-
-            <li>
-              Ensured secure data management, optimized MySQL queries, and maintained
-              scalable backend architecture using PHP and MySQL to support smooth
-              e-commerce operations.
-            </li>
-          </ul>
-
-
-        </div>
       </div>
     </section>
+    </div>
   );
-};
-
-export default FreelanceAstrologySection;
-
+}
